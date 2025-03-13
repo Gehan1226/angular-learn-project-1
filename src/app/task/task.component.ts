@@ -17,14 +17,8 @@ export class TaskComponent {
 
   constructor(private readonly taskService: TaskService) {}
 
-  
-
   get getSelectedUserTasks() {
     return this.taskService.getUsertasks(this.id);
-  }
-
-  onCompleteTask(id: string) {
-    this.taskService.removeTask(id);
   }
 
   onClickAddTask() {
@@ -35,9 +29,4 @@ export class TaskComponent {
     this.isAddingTask = false;
   }
 
-  onAddTask(task: NewTask) {
-    this.taskService.addTask(task, this.id);
-
-    this.isAddingTask = false;
-  }
 }
